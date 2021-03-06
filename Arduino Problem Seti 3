@@ -1,0 +1,15 @@
+#define TMP36 A0
+
+void setup()
+{
+    pinMode (TMP36 , INPUT ) ;
+    Serial.begin(9600);
+}
+
+void loop()
+{
+    int sensorDegeri = analogRead(TMP36);
+    double sicaklik = map ( sensorDegeri , 20 , 358 , -40 , 125);
+    Serial.println(sicaklik);
+    delay(500);
+}
